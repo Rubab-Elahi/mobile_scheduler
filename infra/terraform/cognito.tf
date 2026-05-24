@@ -65,7 +65,7 @@ resource "aws_cognito_user_pool" "main" {
 }
 
 # ── Google Identity Provider ──────────────────────────────────────
-resource "aws_cognito_user_pool_identity_provider" "google" {
+resource "aws_cognito_identity_provider" "google" {
   user_pool_id  = aws_cognito_user_pool.main.id
   provider_name = "Google"
   provider_type = "Google"
@@ -121,7 +121,7 @@ resource "aws_cognito_user_pool_client" "mobile" {
   allowed_oauth_flows_user_pool_client = true
   supported_identity_providers = [
     "COGNITO",
-    aws_cognito_user_pool_identity_provider.google.provider_name,
+    aws_cognito_identity_provider.google.provider_name,
   ]
 
   # Callback / logout URLs — update once you have your Flutter deep-link scheme
@@ -137,7 +137,7 @@ resource "aws_cognito_user_pool_client" "mobile" {
 
   prevent_user_existence_errors = "ENABLED"
 
-  depends_on = [aws_cognito_user_pool_identity_provider.google]
+  depends_on = [aws_cognito_identity_provider.google]
 }
 
 # ── Resource Server (optional — for machine-to-machine) ───────────

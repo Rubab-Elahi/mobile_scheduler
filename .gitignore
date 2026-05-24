@@ -1,0 +1,60 @@
+# ── Terraform ──────────────────────────────────────────────────
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+.terraform.tfstate.lock.info
+*.tfvars
+*.tfvars.json
+
+# ── Lambda Build ───────────────────────────────────────────────
+.build/
+*.zip
+
+# ── Python / Dependencies ──────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pip-cache/
+
+# Ignore installed packages in service folders
+# (Keep only the handler and requirements)
+services/*/bin/
+services/*/lib/
+services/*/include/
+services/*/share/
+services/*/*.dist-info/
+services/*/*.egg-info/
+
+# Specific large libraries installed via pip --target
+services/**/openai/
+services/**/google/
+services/**/google_api_python_client*/
+services/**/httpx/
+services/**/httpcore/
+services/**/pydantic/
+services/**/boto3/
+services/**/botocore/
+services/**/urllib3/
+services/**/certifi/
+services/**/charset_normalizer/
+services/**/idna/
+services/**/s3transfer/
+services/**/jmespath/
+services/**/dateutil/
+services/**/typing_extensions*/
+
+# ── Misc ───────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+*.log
+.env
+applications_features.txt

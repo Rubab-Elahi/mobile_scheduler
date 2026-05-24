@@ -28,7 +28,7 @@ resource "aws_amplify_app" "main" {
     API_GATEWAY_URL           = "${aws_apigatewayv2_api.main.api_endpoint}/${var.environment}"
     APPSYNC_GRAPHQL_URL       = aws_appsync_graphql_api.main.uris["GRAPHQL"]
     S3_VOICE_BUCKET           = aws_s3_bucket.voice_files.bucket
-    AWS_REGION                = var.aws_region
+    APP_AWS_REGION            = var.aws_region
     ENVIRONMENT               = var.environment
   }
 

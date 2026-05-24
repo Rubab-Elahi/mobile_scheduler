@@ -63,33 +63,8 @@ resource "aws_appsync_graphql_api" "main" {
   tags = {
     Name = "${local.name_prefix}-graphql"
   }
-}
 
-# ── AppSync Logging Role ──────────────────────────────────────────
-resource "aws_iam_role" "appsync_logging" {
-  name = "${local.name_prefix}-appsync-logging-role"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [{
-      Action    = "sts:AssumeRole"
-      Effect    = "Allow"
-      Principal = { Service = "appsync.amazonaws.com" }
-    }]
-  })
-}
-
-resource "aws_iam_role_policy_attachment" "appsync_logging" {
-  role       = aws_iam_role.appsync_logging.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSAppSyncPushToCloudWatchLogs"
-}
-
-# ── GraphQL Schema ────────────────────────────────────────────────
-resource "aws_appsync_graphql_api" "schema" {}  # placeholder reference below
-
-resource "aws_appsync_schema" "main" {
-  api_id     = aws_appsync_graphql_api.main.id
-  definition = <<-GRAPHQL
+  schema = <<-GRAPHQL
     type Task {
       userId:    String!
       taskId:    String!
@@ -157,6 +132,26 @@ resource "aws_appsync_schema" "main" {
     }
   GRAPHQL
 }
+
+# ── AppSync Logging Role ──────────────────────────────────────────
+resource "aws_iam_role" "appsync_logging" {
+  name = "${local.name_prefix}-appsync-logging-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action    = "sts:AssumeRole"
+      Effect    = "Allow"
+      Principal = { Service = "appsync.amazonaws.com" }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "appsync_logging" {
+  role       = aws_iam_role.appsync_logging.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSAppSyncPushToCloudWatchLogs"
+}
+
 
 # ── DynamoDB Data Source ──────────────────────────────────────────
 resource "aws_appsync_datasource" "tasks" {
