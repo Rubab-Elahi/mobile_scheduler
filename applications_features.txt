@@ -1,0 +1,108 @@
+﻿AI Mobile Scheduler App
+An intelligent Agentic AI-powered productivity app that helps users manage tasks, create smart schedules, and stay productive automatically.
+Key Features
+Smart Authentication
+Using Amazon Cognito
+* Secure Login & Signup
+* Google Sign-In
+* JWT Authentication
+________________
+
+
+AI Task Management
+Users can:
+* Add tasks manually or by voice
+* Save tasks by date
+* Set priorities
+* Manage daily activities easily
+All data is stored in Amazon DynamoDB.
+________________
+
+
+AI Schedule Generation
+The LLM intelligently:
+* Understands user tasks
+* Asks which tasks are most important
+* Creates a complete productive timetable
+* Optimizes the user’s day automatically
+________________
+
+
+Agentic AI System
+The AI can:
+* Make scheduling decisions
+* Rearrange tasks dynamically
+* Learn user habits
+* Improve productivity workflows automatically
+________________
+
+
+Voice Assistant
+Using:
+* Amazon Transcribe
+* Amazon Polly
+Features:
+* Voice-to-task conversion
+* Speech-to-text
+* AI voice responses
+* Hands-free scheduling
+Example:
+“Add gym tomorrow at 3 PM.”
+________________
+
+
+Google Calendar Integration
+Using Google Calendar MCP Server
+* Auto-add schedules to Google Calendar
+* Real-time calendar sync
+* Smart event management
+________________
+
+
+Notifications & Alerts
+Using:
+* Amazon SNS
+* Amazon EventBridge
+Features:
+* Task reminders
+* Productivity alerts
+* Missed task notifications
+* Smart scheduling triggers
+________________
+
+
+Cloud Storage & Backend
+Using:
+* AWS Lambda
+* DynamoDB
+* Amazon S3
+Handles:
+* Task processing
+* AI orchestration
+* Voice files
+* User preferences
+* Attachments
+________________
+
+
+Tech Stack
+* Flutter Mobile App
+* AWS Amplify
+* AWS Lambda
+* Amazon Cognito
+* DynamoDB
+* Amazon S3
+* Amazon SNS
+* Amazon EventBridge
+* OpenAI GPT-4o-mini
+* Google Calendar API
+________________
+
+
+Final Vision
+A fully intelligent AI assistant that helps users:
+* Organize daily life
+* Plan schedules automatically
+* Sync calendars
+* Interact using voice
+* Stay productive with Agentic AI automation

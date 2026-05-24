@@ -1,0 +1,20 @@
+# ─────────────────────────────────────────────────────────────────
+#  terraform.tfvars.example
+#  Copy to terraform.tfvars and fill in your real values.
+#  NEVER commit terraform.tfvars to version control.
+# ─────────────────────────────────────────────────────────────────
+
+aws_region  = "us-east-1"
+app_name    = "mobile-scheduler"
+environment = "dev"
+
+# Google OAuth (Google Cloud Console → APIs & Services → Credentials)
+google_client_id     = "XXXXXXXXXX.apps.googleusercontent.com"
+google_client_secret = "GOCSPX-XXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# OpenAI (can be updated later in Secrets Manager Console)
+openai_api_key = "sk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# Google Calendar service account JSON (paste as single-line JSON string)
+# Generate at: Google Cloud Console → IAM → Service Accounts → Keys
+google_cal_service_account_json = "{\"type\":\"service_account\",\"project_id\":\"your-project\",...}"
