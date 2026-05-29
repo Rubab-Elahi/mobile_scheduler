@@ -1,0 +1,2 @@
+/home/arham/Desktop/mobile_scheduler/app_ui/android/app/.cxx/RelWithDebInfo/f6w2t276/x86_64/CMakeFiles/edit_cache.dir
+/home/arham/Desktop/mobile_scheduler/app_ui/android/app/.cxx/RelWithDebInfo/f6w2t276/x86_64/CMakeFiles/rebuild_cache.dir

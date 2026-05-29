@@ -54,7 +54,20 @@ const amplifyconfig = '''{
             ],
             "verificationMechanisms": [
               "EMAIL"
-            ]
+            ],
+            "OAuth": {
+              "WebDomain": "mobile-scheduler-dev-auth.auth.us-east-1.amazoncognito.com",
+              "AppClientId": "35akpb6r62eht7n58eu3to2dt0",
+              "SignInRedirectURI": "myapp://callback",
+              "SignOutRedirectURI": "myapp://signout",
+              "Scopes": [
+                "phone",
+                "email",
+                "openid",
+                "profile",
+                "aws.cognito.signin.user.admin"
+              ]
+            }
           }
         }
       }

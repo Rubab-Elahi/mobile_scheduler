@@ -1,0 +1,1 @@
+/home/arham/Desktop/mobile_scheduler/app_ui/build/app/intermediates/cxx/RelWithDebInfo/f6w2t276/obj/arm64-v8a
